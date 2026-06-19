@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: 'Pixel';
-    src: url('/assets/fonts/VT323-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/VT323-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -16,22 +16,22 @@
 
 @font-face {
     font-family: 'PixelTNR';
-    src: url('/assets/fonts/pixelated-times-new-roman.otf') format('truetype');
+    src: url('../assets/fonts/pixelated-times-new-roman.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 body {
-  cursor: url("/assets/images/cursors/arrow.cur"), auto;
+  cursor: url("../assets/images/cursors/arrow.cur"), auto;
 }
 
 a, button, [role="button"] {
-  cursor: url("/assets/images/cursors/link.cur"), pointer;
+  cursor: url("../assets/images/cursors/link.cur"), pointer;
 }
 
 input[type="text"], textarea {
-  cursor: url("/assets/images/cursors/link.cur"), text;
+  cursor: url("../assets/images/cursors/link.cur"), text;
 }
 
 .grain-overlay {
