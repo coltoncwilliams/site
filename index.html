@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" data-theme="dark" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colton Williams</title>
+    <link href="./css/output.css" rel="stylesheet" />
+  </head>
+
+  <body
+    class="relative h-full bg-[rgb(58,126,186)] bg-[url(/assets/images/background.jpg)] bg-cover bg-fixed bg-no-repeat"
+  >
+    <main>
+      <div class="grain-overlay"></div>
+      <div
+        class="flex flex-col items-center px-5 pb-5 font-['PixelTNR','Fallback',sans-serif] sm:px-10 sm:pb-10"
+      >
+        <div class="relative flex w-full max-w-250 flex-col">
+          <!-- 
+          
+          *** MENU ***
+          
+          -->
+          <div
+            id="menu"
+            class="sticky top-0 left-0 z-50 mt-5 flex h-6 w-full flex-row items-center bg-gray-900 pl-6 text-2xl leading-6 text-white sm:mt-10"
+          >
+            <div class="group relative" id="menu-file">
+              <button
+                onclick="clickMenuItem('menu-file')"
+                onmouseover="hoverMenuItem('menu-file')"
+                class="cursor-pointer border-gray-900 px-3 group-aria-expanded:border-t group-aria-expanded:bg-white group-aria-expanded:text-gray-900"
+              >
+                File
+              </button>
+              <div
+                class="top-6 hidden min-w-30 flex-col border border-gray-900 bg-white text-gray-900 group-aria-expanded:absolute group-aria-expanded:flex"
+              >
+                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
+                  >Demo 1</a
+                >
+                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
+                  >Demo 2</a
+                >
+                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
+                  >Demo 3</a
+                >
+              </div>
+            </div>
+
+            <div class="group relative" id="menu-edit">
+              <button
+                onclick="clickMenuItem('menu-edit')"
+                onmouseover="hoverMenuItem('menu-edit')"
+                class="cursor-pointer border-gray-900 px-3 group-aria-expanded:border-t group-aria-expanded:bg-white group-aria-expanded:text-gray-900"
+              >
+                Edit
+              </button>
+              <div
+                class="top-6 hidden min-w-30 flex-col border border-gray-900 bg-white text-gray-900 group-aria-expanded:absolute group-aria-expanded:flex"
+              >
+                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
+                  >Demo 1</a
+                >
+                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
+                  >Demo 2</a
+                >
+                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
+                  >Demo 3</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="z-10 flex w-full grow flex-col border border-gray-900">
+            <div
+              class="w-full bg-[url(/assets/images/back6.jpg)] bg-cover bg-bottom"
+            >
+              <div
+                class="xs:px-10 xs:mt-10 relative mt-5 mb-4 flex h-40 flex-col px-6 sm:mt-15 sm:px-15 md:mt-20 md:h-50 lg:h-70"
+              >
+                <!-- 
+              
+                *** MOBILE HEADER ***
+              
+                -->
+                <h1 class="flex text-6xl leading-6 sm:hidden">Title</h1>
+                <h2 class="flex pl-1 text-2xl leading-8 sm:hidden">Subtitle</h2>
+                <div class="relative flex min-h-0 grow flex-row">
+                  <!-- 
+              
+                  *** PORTRAIT ***
+                
+                  -->
+                  <div
+                    id="portrait"
+                    class="group xs:mr-4 max-xs:aria-hidden:-left-6 relative z-50 mr-2 aspect-square h-full overflow-hidden aria-expanded:absolute aria-expanded:h-full aria-expanded:w-full aria-hidden:w-10 max-sm:aria-hidden:absolute max-sm:aria-hidden:-left-10 sm:mr-8 sm:aria-hidden:w-20"
+                  >
+                    <img
+                      src="./assets/images/border2.png"
+                      class="absolute h-full w-full group-aria-hidden:hidden"
+                    />
+                    <img
+                      src="./assets/images/closed.gif"
+                      class="absolute hidden h-full w-full group-aria-disabled:block"
+                    />
+                    <img
+                      src="./assets/images/minimized.jpeg"
+                      class="absolute bottom-2 hidden h-5 w-full sm:group-aria-hidden:block"
+                    />
+                    <img
+                      src="./assets/images/minimized-xs.jpeg"
+                      class="absolute bottom-2 -left-6 hidden h-20 w-full max-sm:group-aria-hidden:block"
+                    />
+                    <div
+                      class="absolute right-1 flex h-3 w-4/12 max-w-78 flex-row group-aria-disabled:hidden group-aria-expanded:right-3 group-aria-hidden:bottom-2 group-aria-hidden:left-0 group-aria-hidden:h-20 group-aria-hidden:w-full max-sm:group-aria-hidden:w-4 sm:group-aria-hidden:h-5 lg:h-5"
+                    >
+                      <button
+                        onclick="clickPortraitMinimize()"
+                        class="hidden flex-1 cursor-pointer group-aria-hidden:flex md:flex"
+                      ></button>
+                      <button
+                        onclick="clickPortraitMaximize()"
+                        class="hidden flex-1 cursor-pointer group-aria-hidden:hidden md:flex"
+                      ></button>
+                      <button
+                        onclick="clickPortraitClose()"
+                        class="flex flex-2 cursor-pointer group-aria-hidden:hidden"
+                      ></button>
+                    </div>
+                    <img
+                      src="./assets/images/portrait.png"
+                      class="h-full w-full object-center p-1 group-aria-expanded:content-stretch group-aria-hidden:hidden"
+                    />
+                  </div>
+
+                  <div class="relative flex h-full min-h-0 grow flex-col">
+                    <!-- 
+              
+                    *** DESKTOP HEADER ***
+                  
+                    -->
+                    <div class="relative flex flex-col">
+                      <h1 class="hidden text-6xl leading-6 sm:block">Title</h1>
+                      <h2 class="hidden pl-1 text-2xl leading-8 sm:block">
+                        Subtitle
+                      </h2>
+                      <h3 class="pl-1 text-lg leading-1 text-red-800">
+                        Heading
+                      </h3>
+                    </div>
+
+                    <!-- 
+              
+                    *** CHAT ***
+                  
+                    -->
+                    <div
+                      class="xs:mr-4 relative my-2 mr-2 flex min-h-0 grow flex-col border bg-white font-light sm:mr-8"
+                      onclick="clickChat()"
+                    >
+                      <div
+                        id="chat-conversation"
+                        class="min-h-0 overflow-y-auto p-2 text-xl"
+                      >
+                        <div class="flex flex-row leading-4 text-red-500">
+                          <p class="pr-1">Me:</p>
+                          <p class="text-black">What's up</p>
+                        </div>
+                        <div class="flex h-100 flex-row leading-4 text-sky-700">
+                          <p class="pr-1">You:</p>
+                          <p class="text-black">Heyyy how's it going</p>
+                        </div>
+                      </div>
+                      <div
+                        class="xs:pr-5 flex h-7 w-full flex-row items-center gap-2 bg-gray-900 p-1 pr-2 md:pr-20"
+                      >
+                        <input
+                          id="chat-input"
+                          type="text"
+                          class="h-full w-full rounded-xl bg-white py-1 pl-2 text-xl"
+                          placeholder="chat..."
+                        />
+                        <button
+                          class="xs:w-10 h-5 w-7 cursor-pointer items-center rounded-3xl bg-white text-xl leading-6.5"
+                          onclick="sendChat()"
+                        >
+                          ➭
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute -top-8 -right-8 aspect-square h-20 overflow-hidden sm:top-3 sm:right-3 md:h-30"
+                    >
+                      <img
+                        src="./assets/images/fih.gif"
+                        class="object-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 
+          
+            *** MAIN BODY ***
+          
+            -->
+            <div
+              class="xs:p-10 w-full bg-white bg-[url(/assets/images/back4.jpg)] bg-top bg-no-repeat p-6"
+            >
+              <div
+                class="flex h-5 w-6/12 border-x border-t border-gray-900 bg-sky-200"
+              >
+                <button
+                  onclick="clickBodyTab('body-content-1')"
+                  class="flex-1 cursor-pointer border-r border-gray-900 bg-sky-200"
+                ></button>
+                <button
+                  onclick="clickBodyTab('body-content-2')"
+                  class="flex-1 cursor-pointer border-r bg-amber-200"
+                ></button>
+                <button
+                  onclick="clickBodyTab('body-content-3')"
+                  class="flex-1 cursor-pointer bg-purple-300"
+                ></button>
+              </div>
+              <div
+                id="body-content-1"
+                class="hidden h-100 min-h-screen border border-gray-900 bg-sky-200 aria-expanded:block"
+                aria-expanded="true"
+              ></div>
+              <div
+                id="body-content-2"
+                class="hidden h-400 min-h-screen border border-gray-900 bg-amber-200 aria-expanded:block"
+              ></div>
+              <div
+                id="body-content-3"
+                class="hidden h-50 min-h-screen border border-gray-900 bg-purple-300 aria-expanded:block"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
