@@ -1,4 +1,5 @@
 /node_modules
 /dist
 /css/output.css
+/js/bundle.js
 .DS_store
