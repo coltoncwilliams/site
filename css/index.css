@@ -48,3 +48,25 @@ input[type="text"], textarea {
   z-index: 9999;
 }
 
+.chat-me {
+  @apply flex flex-row leading-4 text-red-500  min-w-0 ;
+
+  .header {
+    @apply pr-1 ;
+  }
+  .content {
+    @apply text-black min-w-0 flex-1 wrap-anywhere  hyphens-auto;
+  }
+}
+
+.chat-you {
+  @apply flex flex-row leading-4 text-sky-700;
+
+  .header {
+    @apply pr-1;
+  }
+  .content {
+    @apply text-black;
+  }
+}
+

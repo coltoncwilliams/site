@@ -27,8 +27,7 @@
           >
             <div class="group relative" id="menu-file">
               <button
-                onclick="clickMenuItem('menu-file')"
-                onmouseover="hoverMenuItem('menu-file')"
+                id="menu-file-button"
                 class="cursor-pointer border-gray-900 px-3 group-aria-expanded:border-t group-aria-expanded:bg-white group-aria-expanded:text-gray-900"
               >
                 File
@@ -50,8 +49,7 @@
 
             <div class="group relative" id="menu-edit">
               <button
-                onclick="clickMenuItem('menu-edit')"
-                onmouseover="hoverMenuItem('menu-edit')"
+                id="menu-edit-button"
                 class="cursor-pointer border-gray-900 px-3 group-aria-expanded:border-t group-aria-expanded:bg-white group-aria-expanded:text-gray-900"
               >
                 Edit
@@ -74,9 +72,10 @@
 
           <div class="z-10 flex w-full grow flex-col border border-gray-900">
             <div
-              class="w-full bg-[url../assets/images/back6.jpg)] bg-cover bg-bottom"
+              class="w-full bg-[url(../assets/images/back7.png)] bg-cover bg-bottom"
             >
               <div
+                id="header-content"
                 class="xs:px-10 xs:mt-10 relative mt-5 mb-4 flex h-40 flex-col px-6 sm:mt-15 sm:px-15 md:mt-20 md:h-50 lg:h-70"
               >
                 <!-- 
@@ -94,7 +93,7 @@
                   -->
                   <div
                     id="portrait"
-                    class="group xs:mr-4 max-xs:aria-hidden:-left-6 relative z-50 mr-2 aspect-square h-full overflow-hidden aria-expanded:absolute aria-expanded:h-full aria-expanded:w-full aria-hidden:w-10 max-sm:aria-hidden:absolute max-sm:aria-hidden:-left-10 sm:mr-8 sm:aria-hidden:w-20"
+                    class="shrink-0 group xs:mr-4 max-xs:aria-hidden:-left-6 relative z-50 mr-2 aspect-square! h-full overflow-hidden aria-expanded:absolute aria-expanded:h-full aria-expanded:w-full aria-hidden:w-10 max-sm:aria-hidden:absolute max-sm:aria-hidden:-left-10 sm:mr-8 sm:aria-hidden:w-20"
                   >
                     <img
                       src="./assets/images/border2.png"
@@ -116,15 +115,15 @@
                       class="absolute right-1 flex h-3 w-4/12 max-w-78 flex-row group-aria-disabled:hidden group-aria-expanded:right-3 group-aria-hidden:bottom-2 group-aria-hidden:left-0 group-aria-hidden:h-20 group-aria-hidden:w-full max-sm:group-aria-hidden:w-4 sm:group-aria-hidden:h-5 lg:h-5"
                     >
                       <button
-                        onclick="clickPortraitMinimize()"
+                        id="portrait-minimize-button"
                         class="hidden flex-1 cursor-pointer group-aria-hidden:flex md:flex"
                       ></button>
                       <button
-                        onclick="clickPortraitMaximize()"
+                        id="portrait-maximize-button"
                         class="hidden flex-1 cursor-pointer group-aria-hidden:hidden md:flex"
                       ></button>
                       <button
-                        onclick="clickPortraitClose()"
+                        id="portrait-close-button"
                         class="flex flex-2 cursor-pointer group-aria-hidden:hidden"
                       ></button>
                     </div>
@@ -134,7 +133,9 @@
                     />
                   </div>
 
-                  <div class="relative flex h-full min-h-0 grow flex-col">
+                  <div
+                    class="relative flex h-full min-h-0 grow flex-col min-w-0"
+                  >
                     <!-- 
               
                     *** DESKTOP HEADER ***
@@ -156,23 +157,24 @@
                   
                     -->
                     <div
-                      class="xs:mr-4 relative my-2 mr-2 flex min-h-0 grow flex-col border bg-white font-light sm:mr-8"
-                      onclick="clickChat()"
+                      class="xs:mr-4 relative my-2 mr-2 flex min-h-0 grow flex-col border bg-white font-light sm:mr-8 min-w-0"
+                      id="chat"
                     >
                       <div
                         id="chat-conversation"
-                        class="min-h-0 overflow-y-auto p-2 text-xl"
+                        class="min-h-0 overflow-y-auto p-2 text-xl flex grow flex-col min-w-0 sm:pr-10 md:pr-18"
                       >
-                        <div class="flex flex-row leading-4 text-red-500">
-                          <p class="pr-1">Me:</p>
-                          <p class="text-black">What's up</p>
+                        <div class="chat-me">
+                          <p class="header">Me:</p>
+                          <p class="content">Yoooooo</p>
                         </div>
-                        <div class="flex h-100 flex-row leading-4 text-sky-700">
-                          <p class="pr-1">You:</p>
-                          <p class="text-black">Heyyy how's it going</p>
+                        <div class="chat-you">
+                          <p class="header">You:</p>
+                          <p class="content">Heyyy how's it going</p>
                         </div>
                       </div>
-                      <div
+                      <form
+                        id="chat-form"
                         class="xs:pr-5 flex h-7 w-full flex-row items-center gap-2 bg-gray-900 p-1 pr-2 md:pr-20"
                       >
                         <input
@@ -183,14 +185,14 @@
                         />
                         <button
                           class="xs:w-10 h-5 w-7 cursor-pointer items-center rounded-3xl bg-white text-xl leading-6.5"
-                          onclick="sendChat()"
+                          type="submit"
                         >
                           ➭
                         </button>
-                      </div>
+                      </form>
                     </div>
                     <div
-                      class="absolute -top-8 -right-8 aspect-square h-20 overflow-hidden sm:top-3 sm:right-3 md:h-30"
+                      class="absolute -top-8 -right-8 aspect-square h-20 overflow-hidden sm:top-3 sm:right-3 md:h-30 pointer-events-none"
                     >
                       <img
                         src="./assets/images/fih.gif"
@@ -214,15 +216,15 @@
                 class="flex h-5 w-6/12 border-x border-t border-gray-900 bg-sky-200"
               >
                 <button
-                  onclick="clickBodyTab('body-content-1')"
+                  id="body-content-1-button"
                   class="flex-1 cursor-pointer border-r border-gray-900 bg-sky-200"
                 ></button>
                 <button
-                  onclick="clickBodyTab('body-content-2')"
+                  id="body-content-2-button"
                   class="flex-1 cursor-pointer border-r bg-amber-200"
                 ></button>
                 <button
-                  onclick="clickBodyTab('body-content-3')"
+                  id="body-content-3-button"
                   class="flex-1 cursor-pointer bg-purple-300"
                 ></button>
               </div>
@@ -244,6 +246,7 @@
         </div>
       </div>
     </main>
-    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/bundle.js"></script>
   </body>
 </html>
