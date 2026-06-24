@@ -22,6 +22,15 @@ $("#chat-form").on("submit", function (e) {
 
 function clickChat() {
   $("#chat-input").focus();
+
+  if ($(window).height() > $("#header-content").height()) {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }
 }
 
 function sendChat(chat) {
@@ -50,6 +59,7 @@ $("#chat").on("focusout", function (e) {
       $("#portrait").attr("aria-disabled", false);
       $("#portrait").attr("aria-hidden", false);
       $("#header-content").height("");
+      window.scrollTo(0, 0);
     }
   }, 500);
 });

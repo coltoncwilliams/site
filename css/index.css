@@ -49,13 +49,13 @@ input[type="text"], textarea {
 }
 
 .chat-me {
-  @apply flex flex-row leading-4 text-red-500  min-w-0 ;
+  @apply flex flex-row leading-4 text-red-500;
 
   .header {
     @apply pr-1 ;
   }
   .content {
-    @apply text-black min-w-0 flex-1 wrap-anywhere  hyphens-auto;
+    @apply text-black min-w-0 wrap-anywhere hyphens-auto;
   }
 }
 
@@ -66,7 +66,7 @@ input[type="text"], textarea {
     @apply pr-1;
   }
   .content {
-    @apply text-black;
+    @apply text-black min-w-0 wrap-anywhere hyphens-auto;
   }
 }
 

@@ -35,9 +35,12 @@
               <div
                 class="top-6 hidden min-w-30 flex-col border border-gray-900 bg-white text-gray-900 group-aria-expanded:absolute group-aria-expanded:flex"
               >
-                <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
-                  >Demo 1</a
+                <button
+                  id="menu-music-button"
+                  class="text-left pl-4 hover:outline hover:outline-gray-900"
                 >
+                  Music
+                </button>
                 <a href="#" class="pl-4 hover:outline hover:outline-gray-900"
                   >Demo 2</a
                 >
@@ -162,11 +165,11 @@
                     >
                       <div
                         id="chat-conversation"
-                        class="min-h-0 overflow-y-auto p-2 text-xl flex grow flex-col min-w-0 sm:pr-10 md:pr-18"
+                        class="min-h-0 overflow-y-auto overflow-x-clip p-2 text-xl flex grow flex-col min-w-0 sm:pr-10 md:pr-18"
                       >
                         <div class="chat-me">
                           <p class="header">Me:</p>
-                          <p class="content">Yoooooo</p>
+                          <p class="content">Yooooo</p>
                         </div>
                         <div class="chat-you">
                           <p class="header">You:</p>
@@ -195,7 +198,7 @@
                       class="absolute -top-8 -right-8 aspect-square h-20 overflow-hidden sm:top-3 sm:right-3 md:h-30 pointer-events-none"
                     >
                       <img
-                        src="./assets/images/fih.gif"
+                        src="./assets/images/glob1.gif"
                         class="object-center"
                       />
                     </div>
@@ -241,6 +244,40 @@
                 id="body-content-3"
                 class="hidden h-50 min-h-screen border border-gray-900 bg-purple-300 aria-expanded:block"
               ></div>
+            </div>
+          </div>
+          <!-- 
+          
+            *** MUSIC MODAL ***
+          
+            -->
+          <div
+            id="music-modal"
+            aria-hidden="true"
+            class="absolute w-full max-w-130 z-100 mt-20 self-center align-middle aria-hidden:hidden block"
+          >
+            <img
+              src="./assets/images/border2.png"
+              class="absolute h-full w-full group-aria-hidden:hidden pointer-events-none z-50"
+            />
+            <div class="relative mx-2 mb-1 mt-6 px-2 pb-1 pt-2 bg-window-teal">
+              <iframe
+                data-testid="embed-iframe"
+                style="border-radius: 0px"
+                src="https://open.spotify.com/embed/playlist/34kVdppdUEqB5Dn99qDRst?utm_source=generator&si=3d2c38185ba44f98"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  fullscreen;
+                  picture-in-picture;
+                "
+                loading="lazy"
+              ></iframe>
             </div>
           </div>
         </div>

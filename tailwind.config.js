@@ -7,6 +7,9 @@ module.exports = {
       screens: {
         xs: "30rem",
       },
+      colors: {
+        "window-teal": "#4A80AB",
+      },
     },
   },
 };
