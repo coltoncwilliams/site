@@ -2,4 +2,8 @@
 /dist
 /css/output.css
 /js/bundle.js
+
+.astro/
+
+
 .DS_store
