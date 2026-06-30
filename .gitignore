@@ -4,6 +4,6 @@
 /js/bundle.js
 
 .astro/
-
+.vscode/
 
 .DS_store
