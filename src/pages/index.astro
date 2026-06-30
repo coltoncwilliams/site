@@ -1,0 +1,89 @@
+---
+import "../styles/global.css";
+import Menu from "../components/menu.astro";
+import Portrait from "../components/portrait.astro";
+import HeaderMobile from "../components/header-mobile.astro";
+import HeaderDesktop from "../components/header-desktop.astro";
+import Chat from "../components/chat.astro";
+import Body1 from "./body1.astro";
+import Body2 from "./body2.astro";
+import Body3 from "./body3.astro";
+import MusicModal from "../components/music-modal.astro";
+---
+
+<html lang="en" data-theme="dark" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colton Williams</title>
+  </head>
+
+  <body
+    class="relative h-full bg-[rgb(58,126,186)] bg-[url(assets/images/background.jpg)] bg-cover bg-fixed bg-no-repeat"
+  >
+    <main>
+      <div class="grain-overlay"></div>
+      <div
+        class="flex flex-col items-center px-5 pb-5 font-['PixelTNR','Fallback',sans-serif] sm:px-10 sm:pb-10"
+      >
+        <MusicModal />
+        <div class="relative flex w-full max-w-250 flex-col">
+          <Menu />
+          <div class="z-10 flex w-full grow flex-col border border-gray-900">
+            <div
+              class="w-full bg-[url(assets/images/back7.png)] bg-cover bg-bottom"
+            >
+              <div
+                id="header-content"
+                class="xs:px-10 xs:mt-10 relative mt-5 mb-4 flex h-40 flex-col px-6 sm:mt-15 sm:px-15 md:mt-20 md:h-50 lg:h-70"
+              >
+                <HeaderMobile />
+                <div class="relative flex min-h-0 grow flex-row">
+                  <Portrait />
+
+                  <div
+                    class="relative flex h-full min-h-0 min-w-0 grow flex-col"
+                  >
+                    <HeaderDesktop />
+                    <Chat />
+                    <div
+                      class="pointer-events-none absolute -top-8 -right-8 aspect-square h-20 overflow-hidden sm:top-3 sm:right-3 md:h-30"
+                    >
+                      <img
+                        src="./assets/images/glob1.gif"
+                        class="object-center"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="xs:p-10 w-full bg-white bg-[url(assets/images/back4.jpg)] bg-top bg-no-repeat p-6"
+            >
+              <div
+                class="flex h-5 w-6/12 border-x border-t border-gray-900 bg-sky-200"
+              >
+                <button
+                  id="body-content-1-button"
+                  class="flex-1 cursor-pointer border-r border-gray-900 bg-sky-200"
+                ></button>
+                <button
+                  id="body-content-2-button"
+                  class="flex-1 cursor-pointer border-r bg-amber-200"></button>
+                <button
+                  id="body-content-3-button"
+                  class="flex-1 cursor-pointer bg-purple-300"></button>
+              </div>
+              <Body1 />
+              <Body2 />
+              <Body3 />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>
