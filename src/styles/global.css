@@ -3,40 +3,43 @@
 @theme {
   --font-custom-font: "PixelTNR", sans-serif;
   --breakpoint-xs: 30rem;
-  --color-window-teal: #4A80AB;
+  --color-window-teal: #4a80ab;
 }
 
 @font-face {
-    font-family: 'Pixel';
-    src: url('assets/fonts/VT323-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Pixel";
+  src: url("../fonts/VT323-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-  font-family: 'Fallback';
-  src: local('system-ui');
+  font-family: "Fallback";
+  src: local("system-ui");
   size-adjust: 50%;
 }
 
 @font-face {
-    font-family: 'PixelTNR';
-    src: url('assets/fonts/pixelated-times-new-roman.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "PixelTNR";
+  src: url("../fonts/pixelated-times-new-roman.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-  cursor: url("assets/images/cursors/arrow.cur"), auto;
+  cursor: url("../images/cursors/arrow.cur"), auto;
 }
 
-a, button, [role="button"] {
-  cursor: url("assets/images/cursors/link.cur"), pointer;
+a,
+button,
+[role="button"] {
+  cursor: url("../images/cursors/link.cur"), pointer;
 }
 
-input[type="text"], textarea {
-  cursor: url("assets/images/cursors/link.cur"), text;
+input[type="text"],
+textarea {
+  cursor: url("../images/cursors/link.cur"), text;
 }
 
 .grain-overlay {
@@ -57,10 +60,10 @@ input[type="text"], textarea {
   @apply flex flex-row leading-4 text-red-500;
 
   .header {
-    @apply pr-1 ;
+    @apply pr-1;
   }
   .content {
-    @apply text-black min-w-0 wrap-anywhere hyphens-auto;
+    @apply min-w-0 wrap-anywhere hyphens-auto text-black;
   }
 }
 
@@ -71,7 +74,6 @@ input[type="text"], textarea {
     @apply pr-1;
   }
   .content {
-    @apply text-black min-w-0 wrap-anywhere hyphens-auto;
+    @apply min-w-0 wrap-anywhere hyphens-auto text-black;
   }
 }
-

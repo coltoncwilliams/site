@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { Image } from "astro:assets";
+import globeImage from "../images/glob1.gif";
 import Menu from "../components/menu.astro";
 import Portrait from "../components/portrait.astro";
 import HeaderMobile from "../components/header-mobile.astro";
@@ -19,7 +21,7 @@ import MusicModal from "../components/music-modal.astro";
   </head>
 
   <body
-    class="relative h-full bg-[rgb(58,126,186)] bg-[url(assets/images/background.jpg)] bg-cover bg-fixed bg-no-repeat"
+    class="relative h-full bg-[rgb(58,126,186)] bg-[url(../images/background.jpg)] bg-cover bg-fixed bg-no-repeat"
   >
     <main>
       <div class="grain-overlay"></div>
@@ -31,7 +33,7 @@ import MusicModal from "../components/music-modal.astro";
           <Menu />
           <div class="z-10 flex w-full grow flex-col border border-gray-900">
             <div
-              class="w-full bg-[url(assets/images/back7.png)] bg-cover bg-bottom"
+              class="w-full bg-[url(../images/back7.png)] bg-cover bg-bottom"
             >
               <div
                 id="header-content"
@@ -49,9 +51,10 @@ import MusicModal from "../components/music-modal.astro";
                     <div
                       class="pointer-events-none absolute -top-8 -right-8 aspect-square h-20 overflow-hidden sm:top-3 sm:right-3 md:h-30"
                     >
-                      <img
-                        src="./assets/images/glob1.gif"
+                      <Image
+                        src={globeImage}
                         class="object-center"
+                        alt="spinning globe"
                       />
                     </div>
                   </div>
@@ -60,7 +63,7 @@ import MusicModal from "../components/music-modal.astro";
             </div>
 
             <div
-              class="xs:p-10 w-full bg-white bg-[url(assets/images/back4.jpg)] bg-top bg-no-repeat p-6"
+              class="xs:p-10 w-full bg-white bg-[url(../images/back4.jpg)] bg-top bg-no-repeat p-6"
             >
               <div
                 class="flex h-5 w-6/12 border-x border-t border-gray-900 bg-sky-200"
