@@ -5,6 +5,10 @@ $("#portrait-close-button").on("click", clickPortraitClose);
 let portraitMaximized = false;
 let portraitMinimized = false;
 
+export function setPortraitMinimized() {
+  portraitMinimized = true;
+}
+
 function clickPortraitMaximize() {
   portraitMaximized = !portraitMaximized;
   $("#portrait").attr("aria-hidden", false);

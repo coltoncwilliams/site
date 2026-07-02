@@ -1,4 +1,5 @@
 import { isSmallScreenSize } from "./utils";
+import { setPortraitMinimized } from "./portrait";
 
 $("#chat").on("click", clickChat);
 
@@ -42,9 +43,9 @@ function sendChat(chat) {
 
 $("#chat").on("focusin", function () {
   if (isSmallScreenSize()) {
-    portraitMinimized = true;
+    setPortraitMinimized();
     $("#portrait").attr("aria-disabled", false);
-    $("#portrait").attr("aria-hidden", portraitMinimized);
+    $("#portrait").attr("aria-hidden", true);
     $("#header-content").height("20rem");
   }
 });
