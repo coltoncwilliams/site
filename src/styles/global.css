@@ -33,13 +33,15 @@ body {
 
 a,
 button,
-[role="button"] {
+[role="button"],
+input[type="text"],
+textarea,
+.cursor-pointer {
   cursor: url("../images/cursors/link.cur"), pointer;
 }
 
-input[type="text"],
-textarea {
-  cursor: url("../images/cursors/link.cur"), text;
+.cursor-not-allowed {
+  cursor: url("../images/cursors/unavailable.cur"), not-allowed;
 }
 
 .grain-overlay {
