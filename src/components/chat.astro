@@ -6,14 +6,6 @@
     id="chat-conversation"
     class="flex min-h-0 min-w-0 grow flex-col overflow-x-clip overflow-y-auto p-2 text-xl sm:pr-10 md:pr-18"
   >
-    <div class="chat-me">
-      <p class="header">Me:</p>
-      <p class="content">Yooooo</p>
-    </div>
-    <div class="chat-you">
-      <p class="header">You:</p>
-      <p class="content">Heyyy how's it going</p>
-    </div>
   </div>
   <form
     id="chat-form"
@@ -26,7 +18,8 @@
       placeholder="chat..."
     />
     <button
-      class="xs:w-10 h-5 w-7 cursor-pointer items-center rounded-3xl bg-white text-xl leading-6.5"
+      id="chat-submit"
+      class="xs:w-10 h-5 w-7 cursor-pointer items-center rounded-3xl bg-white text-xl leading-6.5 aria-disabled:opacity-50"
       type="submit"
     >
       ➭

@@ -4,6 +4,7 @@
   --font-custom-font: "PixelTNR", sans-serif;
   --breakpoint-xs: 30rem;
   --color-window-teal: #4a80ab;
+  --animate-ellipsis: ellipsis 1.5s infinite;
 }
 
 @font-face {
@@ -77,5 +78,20 @@ textarea,
   }
   .content {
     @apply min-w-0 wrap-anywhere hyphens-auto text-black;
+  }
+}
+
+@keyframes ellipsis {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: "..";
+  }
+  66% {
+    content: "...";
+  }
+  100% {
+    content: ".";
   }
 }
