@@ -18,7 +18,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "start": "npx astro dev",
+    "start": "npx astro dev --host",
     "build": "npm run clean && npx astro build"
   }
 }

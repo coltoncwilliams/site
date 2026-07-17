@@ -1,6 +1,7 @@
 import { isSmallScreenSize } from "./utils";
 import { setPortraitMinimized } from "./portrait";
 import { DEFAULT_CHATS, DEFAULT_CHAT_TIME_MS } from "./constants";
+import { sendChatMessage } from "./chatService";
 
 let chatLoading = false;
 let defaultChatLoading = false;
@@ -11,7 +12,7 @@ let renderedDefaultChats =
 renderedDefaultChats.forEach((chatMsg) =>
   renderChat({ role: "assistent", content: chatMsg }),
 );
-chats.forEach(renderChat);
+chats.forEach((chat) => renderChat(chat));
 scrollToBottom();
 
 if (!chats.length) {
@@ -58,18 +59,37 @@ function renderChat(chatObj, id, loading = false) {
   );
 }
 
-function sendChat(chatMsg) {
+async function sendChat(chatMsg) {
   if (defaultChatLoading) {
     setChatLoading(false, true);
   }
   const chatObj = { role: "user", content: chatMsg };
-  renderChat(chatObj);
+  renderChat(chatObj, "chat-temp-div");
   setChatLoading(true);
-  chats.push(chatObj);
-  localStorage.setItem("chats", JSON.stringify(chats));
 
   scrollToBottom();
-  setTimeout(() => setChatLoading(false), 10000);
+
+  const result = await sendChatMessage([...chats, chatObj]);
+  if (result.success) {
+    return onChatSendSuccess(chatObj, result.response);
+  }
+  onChatSendFail(chatObj, result.errorMsg);
+}
+
+function onChatSendSuccess(sentChatObj, receivedChatObj) {
+  chats.push(sentChatObj);
+  chats.push(receivedChatObj);
+  localStorage.setItem("chats", JSON.stringify(chats));
+  $("#chat-temp-div").removeAttr("id");
+  renderChat(receivedChatObj);
+  setChatLoading(false);
+}
+
+function onChatSendFail(sentChatObj, errorMsg) {
+  $("#chat-temp-div").remove();
+  $("#chat-input").val(sentChatObj.content);
+  setChatLoading(false);
+  setError(errorMsg);
 }
 
 function clickChat() {
@@ -101,6 +121,19 @@ function setChatLoading(loading, defaultChat = false) {
     );
   }
   $("#chat-loading-div").remove();
+}
+
+function setError(errorMsg) {
+  $("#chat-submit").prop("disabled", true);
+  $("#chat-input").prop("disabled", true);
+  $("#chat-error-message").text(errorMsg);
+  $("#chat").attr("aria-errormessage", true);
+}
+
+function removeError() {
+  $("#chat-submit").prop("disabled", false);
+  $("#chat-input").prop("disabled", false);
+  $("#chat").attr("aria-errormessage", false);
 }
 
 $("#chat").on("click", clickChat);
@@ -148,6 +181,10 @@ $("#chat-button-clear").on("click", () => {
   );
   scrollToBottom();
 });
+
+$("#chat-button-error").on("click", removeError);
+
+$("#chat-e").on("click", () => setError("Something went wrong"));
 
 function scrollToBottom() {
   $("#chat-conversation").animate(

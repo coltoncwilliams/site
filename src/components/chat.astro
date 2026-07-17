@@ -1,7 +1,45 @@
+---
+import { Image } from "astro:assets";
+import chatError from "../images/chat-error.png";
+---
+
 <div
-  class="xs:mr-4 relative my-2 mr-2 flex min-h-0 min-w-0 grow flex-col border bg-white font-light sm:mr-8"
+  class="xs:mr-4 group relative my-2 mr-2 flex min-h-0 min-w-0 grow flex-col border bg-white font-light sm:mr-8"
   id="chat"
 >
+  <div
+    class="absolute hidden h-full w-full items-center justify-center bg-gray-900/80 p-4 group-aria-errormessage:flex"
+  >
+    <div
+      class="relative max-h-40 w-full max-w-80 rounded bg-blue-100 opacity-100"
+    >
+      <button
+        id="chat-button-error"
+        class="flex w-full flex-col items-center overflow-y-scroll bg-[url(../images/border2.png)] bg-size-[100%_100%] p-2 md:p-6"
+      >
+        <div class="flex flex-row gap-2 md:gap-4">
+          <Image
+            src={chatError}
+            alt="sad face"
+            class="h-4 w-4 md:h-6 md:w-6 lg:h-10 lg:w-10"
+          />
+          <h2
+            class="text-2xl max-lg:leading-6 max-md:leading-4 md:text-3xl lg:text-5xl"
+          >
+            Chat error
+          </h2>
+        </div>
+        <div class="rounded border bg-white px-2 max-lg:mt-1">
+          <p
+            id="chat-error-message"
+            class="max-lg:leading-4 max-md:my-1 max-md:leading-3 max-sm:text-sm max-sm:leading-2"
+          >
+            There was an error processing the request. Please try again later
+          </p>
+        </div>
+      </button>
+    </div>
+  </div>
   <div
     id="chat-conversation"
     class="flex min-h-0 min-w-0 grow flex-col overflow-x-clip overflow-y-auto p-2 text-xl sm:pr-10 md:pr-18"
