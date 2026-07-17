@@ -26,6 +26,11 @@ import MusicModal from "../components/music-modal.astro";
     <main>
       <div class="grain-overlay"></div>
       <div
+        id="glitch-container"
+        class="pointer-events-none fixed z-9998 grid h-dvh w-full grid-cols-12 grid-rows-12"
+      >
+      </div>
+      <div
         class="flex flex-col items-center px-5 pb-5 font-['PixelTNR','Fallback',sans-serif] sm:px-10 sm:pb-10"
       >
         <MusicModal />
