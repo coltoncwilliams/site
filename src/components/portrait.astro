@@ -2,8 +2,6 @@
 import { Image } from "astro:assets";
 import borderImage from "../images/border2.png";
 import closedImage from "../images/closed.gif";
-import minimizedImage from "../images/minimized.jpeg";
-import minimizedXSImage from "../images/minimized-xs.jpeg";
 import portraitImage from "../images/portrait.png";
 ---
 
@@ -22,13 +20,8 @@ import portraitImage from "../images/portrait.png";
     alt="portrait closed"
   />
   <Image
-    src={minimizedImage}
-    class="absolute bottom-2 hidden h-5 w-full sm:group-aria-hidden:block"
-    alt="portrait minimized"
-  />
-  <Image
-    src={minimizedXSImage}
-    class="absolute bottom-2 -left-6 hidden h-20 w-full max-sm:group-aria-hidden:block"
+    src={portraitImage}
+    class="absolute bottom-2 -left-6 hidden h-20 w-full rotate-90 border-gray-900 object-contain group-aria-hidden:block sm:left-0 sm:h-5 sm:rotate-0 sm:border"
     alt="portrait minimized"
   />
   <div
@@ -46,6 +39,17 @@ import portraitImage from "../images/portrait.png";
       id="portrait-close-button"
       class="flex flex-2 cursor-pointer group-aria-hidden:hidden"></button>
   </div>
+
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="/public/images/portrait-background-poster.jpg"
+    class="absolute -z-10 h-full w-full object-cover p-1 group-aria-hidden:bottom-2 group-aria-hidden:h-5 group-aria-hidden:p-0 max-sm:group-aria-hidden:-left-6 max-sm:group-aria-hidden:h-20"
+  >
+    <source src="/public/videos/port.webm" type="video/webm" />
+  </video>
   <Image
     src={portraitImage}
     class="h-full w-full object-center p-1 group-aria-expanded:content-stretch group-aria-hidden:hidden"
